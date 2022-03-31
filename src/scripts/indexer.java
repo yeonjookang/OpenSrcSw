@@ -28,12 +28,13 @@ public class indexer {
 
 	public indexer(String path) {
 		// TODO Auto-generated constructor stub
+		this.path=path;
 	}
 	@SuppressWarnings({"rawtypes","unchecked","nls"})
 	public void invertedXml() throws IOException, ParserConfigurationException, SAXException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		
-		FileOutputStream fileStream = new FileOutputStream("./root/index.post");
+		FileOutputStream fileStream = new FileOutputStream("./index.post");
 		
 		ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileStream);
 		
@@ -42,7 +43,7 @@ public class indexer {
 		
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance(); 
 		DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder(); 
-		Document Doc = documentBuilder.parse(new File("./root/index.xml"));
+		Document Doc = documentBuilder.parse(new File(path));
 		
 		String[] arr1 = {}; //id를 구분하기 위한 #를 추가한 배열
 		
@@ -170,6 +171,8 @@ public class indexer {
 		objectOutputStream.writeObject(keyMap);
 		
 		objectOutputStream.close();
+		
+		
 		
 	}
 	

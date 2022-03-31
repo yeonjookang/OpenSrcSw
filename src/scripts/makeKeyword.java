@@ -45,7 +45,7 @@ public class makeKeyword {
 		// TODO Auto-generated method stub
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance(); 
 		DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder(); 
-		Document Doc = documentBuilder.parse(new File("./root/collection.xml"));
+		Document Doc = documentBuilder.parse(new File("./collection.xml"));
 				
 		
 		DocumentBuilderFactory docFactory=DocumentBuilderFactory.newInstance();
@@ -98,7 +98,7 @@ public class makeKeyword {
 		transformer.setOutputProperty(OutputKeys.ENCODING,"UTF-8");
 		
 		DOMSource source=new DOMSource(doc);
-		StreamResult result = new StreamResult(new FileOutputStream(new File("./root/index.xml")));
+		StreamResult result = new StreamResult(new FileOutputStream(new File("./index.xml")));
 		
 		transformer.transform(source, result);
 		
