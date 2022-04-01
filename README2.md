@@ -1,0 +1,1 @@
+hashmap에서 hashkeylist 와 hashvaluelist를 따로생성하고 꼬고마 형식기를 이용하여 keywordlist 와 weightlist를 생성하였다. keywordlist 의 요소값이 hashkeylist 요소값이 존재하는지 여부를 existList 로 생성하였고, qidList 를 생성하여 반복문을 돌려 각 id 별로 유사도를 계산하여 저장해주었다. qidlist 값을 정렬하여 상위 3개의 문서를 출력하였다.

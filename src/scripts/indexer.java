@@ -155,13 +155,14 @@ public class indexer {
 				if((idlist.get(num)).equals(j)) {
 					int df=idlist.size()-1;
 					int tf=valuearr[i];
-					double w=tf*Math.log(N/df);
-					str=str+j+" "+Math.round(w*100)/100.0+" ";
+					double w=Math.round(tf*Math.log(N/df)*100)/100.0;
+					str=str+j+" "+w+" ";
 					num++;
 					
 				}
 				else {
-					str=str+j+" "+"0"+" ";
+					double w=0;
+					str=str+j+" "+w+" ";
 				}
 			}
 			keyMap.put(key,str);

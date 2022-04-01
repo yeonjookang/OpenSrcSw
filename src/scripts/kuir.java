@@ -25,7 +25,7 @@ public class kuir {
 		
 		String command = args[0];
 		String path = args[1];
-		
+		String query = args[3];
 		if(command.equals("-c")) {
 			makeCollection collection = new makeCollection(path);
 			collection.makeXml();
@@ -38,6 +38,11 @@ public class kuir {
 			indexer index = new indexer(path);
 			index.invertedXml();
 		}
+		else if(command.equals("-s")) {
+			searcher search = new searcher(path);
+			search.CalcSim(query);
+		}
+		
 	
 }
 }
