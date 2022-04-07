@@ -30,7 +30,7 @@ public class searcher {
 		this.path=path;
 	}
 	
-	public void CalcSim(String query) throws IOException, ClassNotFoundException, ParserConfigurationException, SAXException {
+	public ArrayList<Double> InnerProduct(String query) throws IOException, ClassNotFoundException, ParserConfigurationException, SAXException {
 		this.query=query;
 		
 		ArrayList<String> hashkeylist = new ArrayList<String>();
@@ -100,53 +100,55 @@ public class searcher {
 			qidList.add(sum);
 		}
 		
-		ArrayList<Integer> indexArr = new ArrayList<>(Arrays.asList(0,1,2,3,4));
+		return qidList;
 		
-		for(int i=0;i<qidList.size();i++) {
-			for(int j=i+1;j<qidList.size();j++) {
-				if(qidList.get(i)<qidList.get(j)) {
-					double tmp = qidList.get(i);
-					qidList.set(i, qidList.get(j));
-					qidList.set(j, tmp);
-					
-					int tmp2= indexArr.get(i);
-					indexArr.set(i, indexArr.get(j));
-					indexArr.set(j, tmp2);
-				}
-			}
-		}
-		
-		
-		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance(); 
-		DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder(); 
-		Document Doc = documentBuilder.parse(new File("./collection.xml"));
-		
-		ArrayList<String> titleArr = new ArrayList<String>();
-		
-		for(int i=0;i<5;i++) {
-			
-			NodeList titles=Doc.getElementsByTagName("title");
-			Node title1=titles.item(i);
-			Node titlevalue=title1.getFirstChild();
-			String titlevalue1=titlevalue.getNodeValue();
-			titleArr.add(titlevalue1);
-		}
-		
-		if(qidList.get(0).equals(0.0)) {
-			System.out.println("유사도 값이 모두 0입니다.");
-		}
-		else if(qidList.get(1).equals(0.0)) {
-			System.out.println("상위 1위 문서: "+titleArr.get(indexArr.get(0)));
-		}
-		else if(qidList.get(2).equals(0.0)) {
-			System.out.println("상위 1위 문서: "+titleArr.get(indexArr.get(0)));
-			System.out.println("상위 2위 문서: "+titleArr.get(indexArr.get(1)));
-		}
-		else {
-			System.out.println("상위 1위 문서: "+titleArr.get(indexArr.get(0)));
-			System.out.println("상위 2위 문서: "+titleArr.get(indexArr.get(1)));
-			System.out.println("상위 3위 문서: "+titleArr.get(indexArr.get(2)));
-		}
+//		ArrayList<Integer> indexArr = new ArrayList<>(Arrays.asList(0,1,2,3,4));
+//		
+//		for(int i=0;i<qidList.size();i++) {
+//			for(int j=i+1;j<qidList.size();j++) {
+//				if(qidList.get(i)<qidList.get(j)) {
+//					double tmp = qidList.get(i);
+//					qidList.set(i, qidList.get(j));
+//					qidList.set(j, tmp);
+//					
+//					int tmp2= indexArr.get(i);
+//					indexArr.set(i, indexArr.get(j));
+//					indexArr.set(j, tmp2);
+//				}
+//			}
+//		}
+//		
+//		
+//		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance(); 
+//		DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder(); 
+//		Document Doc = documentBuilder.parse(new File("./collection.xml"));
+//		
+//		ArrayList<String> titleArr = new ArrayList<String>();
+//		
+//		for(int i=0;i<5;i++) {
+//			
+//			NodeList titles=Doc.getElementsByTagName("title");
+//			Node title1=titles.item(i);
+//			Node titlevalue=title1.getFirstChild();
+//			String titlevalue1=titlevalue.getNodeValue();
+//			titleArr.add(titlevalue1);
+//		}
+//		
+//		if(qidList.get(0).equals(0.0)) {
+//			System.out.println("유사도 값이 모두 0입니다.");
+//		}
+//		else if(qidList.get(1).equals(0.0)) {
+//			System.out.println("상위 1위 문서: "+titleArr.get(indexArr.get(0)));
+//		}
+//		else if(qidList.get(2).equals(0.0)) {
+//			System.out.println("상위 1위 문서: "+titleArr.get(indexArr.get(0)));
+//			System.out.println("상위 2위 문서: "+titleArr.get(indexArr.get(1)));
+//		}
+//		else {
+//			System.out.println("상위 1위 문서: "+titleArr.get(indexArr.get(0)));
+//			System.out.println("상위 2위 문서: "+titleArr.get(indexArr.get(1)));
+//			System.out.println("상위 3위 문서: "+titleArr.get(indexArr.get(2)));
+//		}
 	}
 
 }
