@@ -142,7 +142,8 @@ public class searcher {
 			String titlevalue1=titlevalue.getNodeValue();
 			titleArr.add(titlevalue1);
 		}
-		
+
+
 		if(qidList.get(0).equals(0.0)) {
 			System.out.println("유사도 값이 모두 0입니다.");
 		}
