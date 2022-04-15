@@ -101,9 +101,8 @@ public class searcher {
 		}
 		
 		return qidList;
-
 	}
-
 }
+
 
 	
