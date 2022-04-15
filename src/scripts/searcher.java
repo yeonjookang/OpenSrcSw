@@ -30,6 +30,14 @@ public class searcher {
 		this.path=path;
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
 	public ArrayList<Double> InnerProduct(String query) throws IOException, ClassNotFoundException, ParserConfigurationException, SAXException {
 		this.query=query;
 		
