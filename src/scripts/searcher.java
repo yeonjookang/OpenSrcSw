@@ -30,4 +30,3 @@ public class searcher {
 		this.path=path;
     }
 }
-	
