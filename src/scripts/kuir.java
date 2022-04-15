@@ -38,7 +38,10 @@ public class kuir {
 			indexer index = new indexer(path);
 			index.invertedXml();
 		}
-
+		else if(command.equals("-s")) {
+			searcher search = new searcher(path);
+			search.InnerProduct(query);
+		}
 
 }
 }
