@@ -28,10 +28,6 @@ public class searcher {
 	public String query;
 	public searcher(String path) {
 		this.path=path;
-	}
-	
-	public void CalcSim(String query) throws IOException, ClassNotFoundException, ParserConfigurationException, SAXException {
-		this.query=query;
-	}
-
+    }
 }
+	
