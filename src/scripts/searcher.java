@@ -161,7 +161,7 @@ public class searcher {
 		}
 
 		for(int i=0;i<5;i++) {
-			double sum=0;
+			double sum=InnerProduct(query).get(i);
 			double route1=0;
 			double route2=0;
 			for(int j=0;j<keywordlist.size();j++) {
@@ -170,7 +170,6 @@ public class searcher {
 					break;
 				}
 				else {
-					sum+=(weightlist.get(j))*(hashvaluelist2.get(10*existList.get(j)+(2*i+1)));
 					route2+=Math.pow(hashvaluelist2.get(10*existList.get(j)+(2*i+1)),2);
 				}
 			}
