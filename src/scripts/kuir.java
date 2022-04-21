@@ -42,6 +42,10 @@ public class kuir {
 			searcher search = new searcher(path);
 			search.CalcSim(query);
 		}
+		else if(command.equals("-m")) {
+			MidTerm midterm = new MidTerm(path);
+			midterm.showSnippet(query);
+		}
 
 }
 }
