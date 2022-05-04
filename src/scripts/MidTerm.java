@@ -77,7 +77,7 @@ public class MidTerm {
 		}
 		int point=0;
 		for(int j=0;j<keywordList.size();j++) {
-			for(int i=0;i<thirtyList0.size();i++) {
+			for(int i=0;i<thirtyList0.size()-keywordList.get(j).length();i++) {
 				String s=thirtyList0.get(i).substring(i, i+(keywordList.get(j).length()));
 				if(s.equals(keywordList.get(j))){
 					point++;
@@ -186,6 +186,7 @@ public class MidTerm {
 			best=best1;
 		}
 		
+		System.out.println(best);
 		
 	}
 }
